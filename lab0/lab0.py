@@ -50,7 +50,18 @@ def factorial(x):
 
 
 def count_pattern(pattern, lst):
-    raise NotImplementedError
+	"""
+	pattern: list of symbol
+	lst: list to search in
+	count_pattern( ['a', 'b'], ['a', 'b', 'c', 'e', 'b', 'a', 'b', 'f'] ) should return 2
+	count_pattern( ['a', 'b', 'a'], ['g', 'a', 'b', 'a', 'b', 'a', 'b', 'a']) should return 3
+	"""
+	count = 0
+	for i in range(len(lst) - len(pattern) + 1):
+		listSlice = lst[i:len(pattern) + i]
+		if sum([1 for i,j in zip(pattern, listSlice) if i==j]) == len(pattern):
+			count += 1
+	return count
 
 
 # Problem 2.2: Expression depth
@@ -88,3 +99,6 @@ HOW_WELL_I_LEARNED_601 = "didnt take 6.01"
 
 # How many hours did this lab take?
 HOURS = "few hours"
+
+print count_pattern( ['a', 'b'], ['a', 'b', 'c', 'e', 'b', 'a', 'b', 'f'] ) # should return 2
+print count_pattern( ['a', 'b', 'a'], ['g', 'a', 'b', 'a', 'b', 'a', 'b', 'a']) # should return 3
