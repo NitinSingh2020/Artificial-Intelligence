@@ -82,7 +82,10 @@ def depth(expr):
 # Problem 2.3: Tree indexing
 
 def tree_ref(tree, index):
-    raise NotImplementedError
+	for a in index:
+		tree = tree[a]
+	return tree
+    # raise NotImplementedError
 
 
 # Section 3: Symbolic algebra
@@ -111,3 +114,5 @@ HOURS = "few hours"
 
 
 # print depth([1, 2, 3]) # 1
+sample_tree = [[[1, 2], 3], 7, [4, [5, 6]], [8, 9, 10]]
+print tree_ref(sample_tree, [3,1])
