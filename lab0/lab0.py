@@ -53,8 +53,11 @@ def count_pattern(pattern, lst):
 	"""
 	pattern: list of symbol
 	lst: list to search in
+
 	count_pattern( ['a', 'b'], ['a', 'b', 'c', 'e', 'b', 'a', 'b', 'f'] ) should return 2
 	count_pattern( ['a', 'b', 'a'], ['g', 'a', 'b', 'a', 'b', 'a', 'b', 'a']) should return 3
+
+	returns an int, counts number of times pattern appears in lst
 	"""
 	count = 0
 	for i in range(len(lst) - len(pattern) + 1):
@@ -67,8 +70,14 @@ def count_pattern(pattern, lst):
 # Problem 2.2: Expression depth
 
 def depth(expr):
-    raise NotImplementedError
-
+	"""
+	expr: list
+	return the depth of expr 
+	"""
+	if isinstance(expr, list):
+		return 1 + max(depth(item) for item in expr)
+	else:
+		return 0
 
 # Problem 2.3: Tree indexing
 
@@ -100,5 +109,5 @@ HOW_WELL_I_LEARNED_601 = "didnt take 6.01"
 # How many hours did this lab take?
 HOURS = "few hours"
 
-print count_pattern( ['a', 'b'], ['a', 'b', 'c', 'e', 'b', 'a', 'b', 'f'] ) # should return 2
-print count_pattern( ['a', 'b', 'a'], ['g', 'a', 'b', 'a', 'b', 'a', 'b', 'a']) # should return 3
+
+# print depth([1, 2, 3]) # 1
