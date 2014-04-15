@@ -174,5 +174,23 @@ def do_multiply(expr1, expr2):
     '*' will not help you.
     """
     # Replace this with your solution.
-    raise NotImplementedError
+
+    
+    print "Expr1 is: %s" % expr1
+    print "Expr2 is: %s" % expr2
+    print "Expr1[0] is: %s" %expr1[0]
+    print "Expr2[0] is: %s" %expr2[0]
+
+    itemList = []
+    for item1 in expr1:
+        print "item1 is: ", item1
+        for item2 in expr2:
+            print "item2 is: ", item2
+            if isinstance(item1, int) and isinstance(item2, int):
+                itemList.append(item1*item2)
+            elif isinstance(item1, str) or isinstance(item2, str):
+                itemList.append(str(item1) + "*" + str(item2))
+    print "Return stuff is: ", Sum(itemList)
+    return Sum(itemList)
+    #raise NotImplementedError
 

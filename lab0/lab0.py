@@ -111,8 +111,3 @@ HOW_WELL_I_LEARNED_601 = "didnt take 6.01"
 
 # How many hours did this lab take?
 HOURS = "few hours"
-
-
-# print depth([1, 2, 3]) # 1
-sample_tree = [[[1, 2], 3], 7, [4, [5, 6]], [8, 9, 10]]
-print tree_ref(sample_tree, [3,1])
